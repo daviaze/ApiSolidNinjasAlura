@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = AluraApiSolid
-build_property.ProjectDir = C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid\
+build_property.ProjectDir = C:\CursoAlura\ApiSolidNinjasAlura\AluraApiSolid\

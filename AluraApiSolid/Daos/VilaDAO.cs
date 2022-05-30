@@ -20,17 +20,20 @@ namespace AluraApiSolid.Daos
 
         public void Alterar(Vila obj, int id)
         {
-            throw new NotImplementedException();
+            _vilacontext.Update(obj);
+            _vilacontext.SaveChanges();
         }
 
-        public void Excluir(Ninja ninja)
+        public void Excluir(Vila ninja)
         {
-            throw new NotImplementedException();
+            _vilacontext.Remove(ninja);
+            _vilacontext.SaveChanges();
         }
 
         public void Incluir(Vila obj)
         {
-            throw new NotImplementedException();
+            _vilacontext.Vilas.Add(obj);
+            _vilacontext.SaveChanges();
         }
 
         public IEnumerable<Vila> Resgatar()
@@ -40,7 +43,7 @@ namespace AluraApiSolid.Daos
 
         public Vila ResgatarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _vilacontext.Vilas.FirstOrDefault(v => v.Id == id);
         }
     }
 }

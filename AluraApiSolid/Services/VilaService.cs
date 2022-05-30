@@ -18,12 +18,18 @@ namespace AluraApiSolid.Services
 
         public bool DeleteVila(int id)
         {
-            throw new NotImplementedException();
+            Vila exists = _vilaDAO.ResgatarPorId(id);
+            if (exists != null)
+            {
+                _vilaDAO.Excluir(exists);
+                return true;
+            }
+            return false;
         }
 
         public Vila GetVilaById(int id)
         {
-            throw new NotImplementedException();
+            return _vilaDAO.ResgatarPorId(id);
         }
 
         public IEnumerable<Vila> GetVilas()
@@ -33,12 +39,19 @@ namespace AluraApiSolid.Services
 
         public void PostVila(Vila vila)
         {
-            throw new NotImplementedException();
+            _vilaDAO.Incluir(vila);
         }
 
         public bool PutVila(Vila vila, int id)
         {
-            throw new NotImplementedException();
+            Vila exists = _vilaDAO.ResgatarPorId(id);
+            if (exists != null)
+            {
+                exists.Nome = vila.Nome;
+                _vilaDAO.Alterar(exists, id);
+                return true;
+            }
+            return false;
         }
     }
 }

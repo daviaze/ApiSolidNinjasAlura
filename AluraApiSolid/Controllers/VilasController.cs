@@ -1,4 +1,5 @@
-﻿using AluraApiSolid.Services;
+﻿using AluraApiSolid.Models;
+using AluraApiSolid.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,35 @@ namespace AluraApiSolid.Controllers
         public IActionResult GetVilas()
         {
             return Ok(_vilaService.GetVilas());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetVilaById(int id)
+        {
+            return Ok(_vilaService.GetVilaById(id));
+        }
+
+        [HttpPost]
+        public IActionResult PostVila(Vila vila)
+        {
+            _vilaService.PostVila(vila);
+            return CreatedAtAction("PostVila", new { id = vila.Id }, vila);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutVila(Vila vila, int id)
+        {
+            bool success = _vilaService.PutVila(vila, id);
+            if (success) return NoContent();
+            return NotFound();
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteVila(int id)
+        {
+            bool success = _vilaService.DeleteVila(id);
+            if (success) return NoContent();
+            return NotFound();
         }
     }
 }
