@@ -33,7 +33,6 @@ namespace AluraApiSolid
         {
 
             services.AddDbContext<NinjaContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<VilaContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<INinjaDAO, NinjaDAO>();
             services.AddScoped<IVilaDAO, VilaDAO>();

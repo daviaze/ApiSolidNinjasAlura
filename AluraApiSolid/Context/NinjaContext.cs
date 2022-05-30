@@ -15,5 +15,7 @@ namespace AluraApiSolid.Context
         }
 
         public DbSet<Ninja> Ninjas { get; set; }
+        public DbSet<Vila> Vilas { get; set; }
+
     }
 }

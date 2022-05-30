@@ -11,9 +11,9 @@ namespace AluraApiSolid.Daos
 {
     public class VilaDAO : IVilaDAO
     {
-        private readonly VilaContext _vilacontext;
+        private readonly NinjaContext _vilacontext;
 
-        public VilaDAO(VilaContext vilacontext)
+        public VilaDAO(NinjaContext vilacontext)
         {
             _vilacontext = vilacontext;
         }
