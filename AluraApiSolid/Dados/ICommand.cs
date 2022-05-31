@@ -10,6 +10,6 @@ namespace AluraApiSolid.Dados
     {
         void Incluir(T obj);
         void Alterar(T obj, int id);
-        void Excluir(Ninja ninja);
+        void Excluir(T obj);
     }
 }

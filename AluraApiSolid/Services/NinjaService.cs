@@ -1,5 +1,6 @@
 ﻿using AluraApiSolid.Daos.Interfaces;
 using AluraApiSolid.Models;
+using AluraApiSolid.Pagination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace AluraApiSolid.Services
             _ninjaDao = ninjaDao;
         }
 
-        public IEnumerable<Ninja> GetNinjas()
+        public IEnumerable<Ninja> GetNinjas(Parameters parameters)
         {
-            return _ninjaDao.Resgatar();
+            return _ninjaDao.Resgatar(parameters);
         }
 
         public Ninja GetNinjaById(int id)

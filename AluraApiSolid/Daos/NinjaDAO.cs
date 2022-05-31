@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using AluraApiSolid.Pagination;
 
 namespace AluraApiSolid.Daos.Interfaces
 {
@@ -35,11 +36,13 @@ namespace AluraApiSolid.Daos.Interfaces
             _ninjaContext.SaveChanges();
         }
 
-        public IEnumerable<Ninja> Resgatar()
+        public IEnumerable<Ninja> Resgatar(Parameters parameters)
         {
             return _ninjaContext.Ninjas
                 .Include(i => i.Cla)
                 .Include(i => i.Vila)
+                .Skip((parameters.PageNumber - 1) * parameters.PageSize)
+                .Take(parameters.PageSize)
                 .AsSplitQuery()
                 .AsNoTracking()
                 .ToList();

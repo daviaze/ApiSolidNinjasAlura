@@ -1,6 +1,7 @@
 ﻿using AluraApiSolid.Context;
 using AluraApiSolid.Daos.Interfaces;
 using AluraApiSolid.Models;
+using AluraApiSolid.Pagination;
 using AluraApiSolid.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,9 +23,9 @@ namespace AluraApiSolid.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetNinjas()
+        public IActionResult GetNinjas([FromQuery] Parameters parameters)
         {
-            return Ok(_ninjaService.GetNinjas());
+            return Ok(_ninjaService.GetNinjas(parameters));
         }
 
         [HttpGet("{id}")]

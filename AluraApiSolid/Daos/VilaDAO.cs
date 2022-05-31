@@ -1,6 +1,7 @@
 ﻿using AluraApiSolid.Context;
 using AluraApiSolid.Daos.Interfaces;
 using AluraApiSolid.Models;
+using AluraApiSolid.Pagination;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,27 +21,30 @@ namespace AluraApiSolid.Daos
 
         public void Alterar(Vila obj, int id)
         {
-            throw new NotImplementedException();
+            _vilacontext.Update(obj);
+            _vilacontext.SaveChanges();
         }
 
-        public void Excluir(Ninja ninja)
+        public void Excluir(Vila ninja)
         {
-            throw new NotImplementedException();
+            _vilacontext.Remove(ninja);
+            _vilacontext.SaveChanges();
         }
 
         public void Incluir(Vila obj)
         {
-            throw new NotImplementedException();
+            _vilacontext.Vilas.Add(obj);
+            _vilacontext.SaveChanges();
         }
 
-        public IEnumerable<Vila> Resgatar()
+        public IEnumerable<Vila> Resgatar(Parameters parameters)
         {
             return _vilacontext.Vilas.Include(v => v.Ninjas).AsNoTracking().AsSplitQuery().ToList();
         }
 
         public Vila ResgatarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _vilacontext.Vilas.FirstOrDefault(v => v.Id == id);
         }
     }
 }
