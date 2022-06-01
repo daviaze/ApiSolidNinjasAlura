@@ -1,5 +1,6 @@
 ﻿using AluraApiSolid.Models;
 using AluraApiSolid.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace AluraApiSolid.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult PostVila(Vila vila)
         {
             _vilaService.PostVila(vila);
@@ -39,6 +41,7 @@ namespace AluraApiSolid.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public IActionResult PutVila(Vila vila, int id)
         {
             bool success = _vilaService.PutVila(vila, id);
@@ -47,6 +50,7 @@ namespace AluraApiSolid.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteVila(int id)
         {
             bool success = _vilaService.DeleteVila(id);

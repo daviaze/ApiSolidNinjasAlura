@@ -2,6 +2,7 @@ using AluraApiSolid.Context;
 using AluraApiSolid.Daos;
 using AluraApiSolid.Daos.Interfaces;
 using AluraApiSolid.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,10 +12,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AluraApiSolid
@@ -34,6 +37,23 @@ namespace AluraApiSolid
 
             services.AddDbContext<NinjaContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddAuthentication(auth =>
+            {
+                auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            }).AddJwtBearer(token => {
+                token.RequireHttpsMetadata = false;
+                token.SaveToken = true;
+                token.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dasdadadasdsaadasdasasd")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
             services.AddScoped<INinjaDAO, NinjaDAO>();
             services.AddScoped<IVilaDAO, VilaDAO>();
 
@@ -66,6 +86,8 @@ namespace AluraApiSolid
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

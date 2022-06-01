@@ -3,6 +3,7 @@ using AluraApiSolid.Daos.Interfaces;
 using AluraApiSolid.Models;
 using AluraApiSolid.Pagination;
 using AluraApiSolid.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -35,12 +36,14 @@ namespace AluraApiSolid.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult PostNinja(Ninja ninja)
         {
             _ninjaService.PostNinja(ninja);
             return CreatedAtAction("PostNinja", new { id = ninja.Id }, ninja);
         }
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public IActionResult PutNinja(Ninja ninja, int id)
         {
             bool success = _ninjaService.PutNinja(ninja, id);
@@ -49,6 +52,7 @@ namespace AluraApiSolid.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteNinja(int ninja)
         {
             bool success = _ninjaService.DeleteNinja(ninja);

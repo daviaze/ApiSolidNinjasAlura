@@ -14,7 +14,9 @@ C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\FluentResults.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\Humanizer.dll
+C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -156,8 +158,8 @@ C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\staticwebassets\AluraApiSolid.Usuarios.StaticWebAssets.xml
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\scopedcss\bundle\AluraApiSolid.Usuarios.styles.css
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\AluraApiSolid.Usuarios.RazorTargetAssemblyInfo.cache
+C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\AluraApiSolid.Usuarios.csproj.CopyComplete
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\AluraApiSolid.Usuarios.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\ref\AluraApiSolid.Usuarios.dll
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\AluraApiSolid.Usuarios.pdb
 C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\obj\Debug\net5.0\AluraApiSolid.Usuarios.genruntimeconfig.cache
-C:\Users\user\source\repos\AluraApiSolid\AluraApiSolid.Usuarios\bin\Debug\net5.0\FluentResults.dll

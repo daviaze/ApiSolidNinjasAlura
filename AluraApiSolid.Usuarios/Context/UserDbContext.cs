@@ -25,6 +25,13 @@ namespace AluraApiSolid.Usuarios.Context
                 Name = "normal",
                 NormalizedName = "NORMAL"
             });
+
+            builder.Entity<IdentityRole<int>>().HasData(new IdentityRole<int>
+            {
+                Id = 99999,
+                Name = "admin",
+                NormalizedName = "ADMIN"
+            });
         }
     }
 }
